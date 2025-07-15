@@ -12,7 +12,7 @@ export class AuthController {
     @Res({ passthrough: true }) res: Response,
   ) {
     const token = await this.authService.signupService(createUserDto);
-    res.cookie('jwt', token, {
+    res.cookie('SESSION', token, {
       httpOnly: true,
       secure: false,
       sameSite: 'lax',
@@ -30,7 +30,7 @@ export class AuthController {
       body.email,
       body.password,
     );
-    res.cookie('jwt', token, {
+    res.cookie('SESSION', token, {
       httpOnly: true,
       secure: false,
       sameSite: 'lax',

@@ -15,8 +15,8 @@ export class User {
   id: string;
 
   @ApiHideProperty()
-  @Column({ type: 'boolean', default: true })
-  isAdmin: boolean;
+  @Column({ type: 'varchar', length: 15, default: 'user' })
+  role: string;
 
   /**
    * email should be unique and not null

@@ -23,7 +23,7 @@ export class CreateUserDto {
 
   @ApiHideProperty()
   @IsEmpty()
-  isAdmin: boolean;
+  role: string;
 
   /**
    * Email of the user must be a valid email

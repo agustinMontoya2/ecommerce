@@ -31,6 +31,7 @@ describe('AuthService', () => {
         password: 'test',
         confirmPassword: 'test',
         isAdmin: false,
+        role: 'user',
       };
       usersRepositoryMock.getUserByEmail.mockResolvedValue({
         email: 'test@example.com',
@@ -48,6 +49,7 @@ describe('AuthService', () => {
         password: 'test',
         confirmPassword: 'test',
         isAdmin: false,
+        role: 'user',
       };
       usersRepositoryMock.getUserByEmail.mockResolvedValue(null);
       usersRepositoryMock.createUser.mockResolvedValue({
@@ -67,6 +69,7 @@ describe('AuthService', () => {
         password: 'test',
         confirmPassword: 'test',
         isAdmin: false,
+        role: 'user',
       };
       const bcryptSpy = jest.spyOn(bcrypt, 'hash').mockImplementation(() => {
         return Promise.resolve('hashedPassword123');

@@ -39,7 +39,7 @@ describe('AuthController', () => {
         resMock as any,
       );
       expect(resMock.cookie).toHaveBeenCalledWith(
-        'jwt',
+        'SESSION',
         'fake.jwt.token',
         expect.any(Object),
       );
@@ -55,7 +55,7 @@ describe('AuthController', () => {
           phone: 1234567890,
           password: 'test',
           confirmPassword: 'test',
-          isAdmin: false,
+          role: 'user',
         },
         resMock as any,
       );
@@ -65,7 +65,6 @@ describe('AuthController', () => {
         phone: 1234567890,
         password: 'test',
         confirmPassword: 'test',
-        isAdmin: false,
       });
     });
     it('saves a cookie', async () => {
@@ -76,12 +75,12 @@ describe('AuthController', () => {
           phone: 1234567890,
           password: 'test',
           confirmPassword: 'test',
-          isAdmin: false,
+          role: 'user',
         },
         resMock as any,
       );
       expect(resMock.cookie).toHaveBeenCalledWith(
-        'jwt',
+        'SESSION',
         'fake.jwt.token',
         expect.any(Object),
       );
